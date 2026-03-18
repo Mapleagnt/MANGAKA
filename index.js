@@ -1,71 +1,25 @@
-const { Client, GatewayIntentBits } = require('discord.js');
+// index.js (Node + Express)
 const express = require('express');
-require('dotenv').config();
-
-const client = new Client({
-    intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent
-    ]
-});
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const app = express();
-app.use(express.json());
-const PORT = 3000;
+app.use(cors());
+app.use(bodyParser.json());
 
-const TOKEN = process.env.TOKEN;
-const CHANNEL_ID = 'ID_DO_CANAL_DO_DISCORD';
+let mensagens = []; // armazena mensagens do chat
 
-let messages = []; // guarda todas as mensagens
-
-// Bot Discord
-client.on('ready', () => {
-    console.log(`Bot logado como ${client.user.tag}`);
-});
-
-client.on('messageCreate', (message) => {
-    if (message.author.bot) return;
-    if (message.channel.id === CHANNEL_ID) {
-        // Adiciona a mensagem do Discord
-        messages.push({
-            autor: message.author.username,
-            texto: message.content,
-            origem: 'discord',
-            hora: new Date().toLocaleTimeString()
-        });
-        console.log(`[Discord] ${message.author.username}: ${message.content}`);
-    }
-});
-
-client.login(TOKEN);
-
-// Receber mensagem do site e enviar pro Discord
-app.post('/send', async (req, res) => {
+// Endpoint para receber mensagens do site
+app.post('/send', (req, res) => {
     const { texto, autor } = req.body;
-    const channel = await client.channels.fetch(CHANNEL_ID);
-    if (!channel) return res.status(404).send('Canal não encontrado');
-
-    // Envia para Discord
-    await channel.send(`${autor}: ${texto}`);
-
-    // Adiciona no histórico local
-    messages.push({
-        autor,
-        texto,
-        origem: 'site',
-        hora: new Date().toLocaleTimeString()
-    });
-
-    res.send('Mensagem enviada para Discord');
+    mensagens.push({ texto, autor, origem: 'Site' });
+    res.sendStatus(200);
 });
 
-// Site pega todas as mensagens
+// Endpoint para enviar mensagens para o site
 app.get('/receive', (req, res) => {
-    res.json(messages);
+    res.json(mensagens);
 });
 
-// Rodar servidor HTTP
-app.listen(PORT, () => {
-    console.log(`API rodando em http://localhost:${PORT}`);
-});
+// Iniciar servidor
+app.listen(3000, () => console.log('Servidor rodando na porta 3000'));

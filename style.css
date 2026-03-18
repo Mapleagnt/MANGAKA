@@ -521,3 +521,72 @@ footer {
     margin-bottom: 10px;
     font-weight: bold;
 }
+#chat-container {
+    position: static; /* antes era fixed */
+    bottom: auto;
+    right: auto;
+    width: 100%; /* ou a largura que você quiser */
+    max-width: 600px;
+    margin: 20px auto; /* centralizado */
+    border: 2px solid #555;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+#open-chat-btn {
+    display: none; /* remove o botão de abrir/fechar fixo */
+}
+/* === Estilo do chat === */
+#chat-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto; /* centralizado */
+}
+
+#chat-container {
+  border: 2px solid #555;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #2c2f33;
+  overflow: hidden;
+}
+
+#messages {
+  flex: 1;
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+  color: #f1f1f1;
+  font-family: Arial, sans-serif;
+}
+
+.message { margin-bottom: 8px; }
+.message .author { font-weight: bold; }
+
+#input-container {
+  display: flex;
+  border-top: 1px solid #555;
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #23272a;
+  color: #f1f1f1;
+}
+
+#send-btn {
+  padding: 10px 15px;
+  border: none;
+  background-color: #7289da;
+  color: white;
+  cursor: pointer;
+}
+
+#send-btn:hover {
+  background-color: #5b6eae;
+}

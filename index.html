@@ -181,23 +181,19 @@ if(token){
     });
 }
 </script>
-    <input type="text" id="msg" placeholder="Digite sua mensagem">
-<button onclick="enviar()">Enviar</button>
-<div id="chat"></div>
+    
+    <!-- === Chat integrado === -->
+<div id="chat-wrapper">
+  <div id="chat-container">
+    <div id="messages"></div>
+    <div id="input-container">
+      <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+      <button id="send-btn">Enviar</button>
+    </div>
+  </div>
+</div>
 
-<script>
-  const ws = new WebSocket('ws://SEU_IP:3000'); // ou ws://localhost:3000 se no mesmo dispositivo
-
-  ws.onmessage = (event) => {
-    const chat = document.getElementById('chat');
-    chat.innerHTML += `<p>${event.data}</p>`;
-  };
-
-  function enviar() {
-    const input = document.getElementById('msg');
-    ws.send(input.value);
-    input.value = '';
-  }
-</script>
+<!-- Script do chat -->
+<script src="script.js"></script>
 </body>
 </html>

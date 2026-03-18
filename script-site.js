@@ -1,39 +1,36 @@
-// Elementos do chat
+// Pega elementos
 const input = document.getElementById('message-input');
 const sendBtn = document.getElementById('send-btn');
 const messagesDiv = document.getElementById('messages');
 
-// Função para enviar mensagem
+// Enviar mensagem para Node.js
 async function enviarMensagem() {
     const texto = input.value.trim();
     if (!texto) return;
 
-    // Aqui você manda para o seu backend / Node.js
-    await fetch('http://192.168.1.245:3000/send', { // substituído pelo seu IP
+    await fetch('http://localhost:3000/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ texto, autor: 'Você' })
     });
 
-    // Limpa input
     input.value = '';
 }
 
-// Função para atualizar mensagens
+// Atualizar chat do site
 async function atualizarMensagens() {
-    const res = await fetch('http://192.168.1.245:3000/receive'); // substituído pelo seu IP
+    const res = await fetch('http://localhost:3000/receive');
     const msgs = await res.json();
 
-    messagesDiv.innerHTML = '';
+    messagesDiv.innerHTML = ''; // limpa mensagens
 
     msgs.forEach(m => {
         const p = document.createElement('p');
-        p.classList.add('message');
         p.innerHTML = `<span class="author">[${m.origem}] ${m.autor}:</span> ${m.texto}`;
         messagesDiv.appendChild(p);
     });
 
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    messagesDiv.scrollTop = messagesDiv.scrollHeight; // descer para última mensagem
 }
 
 // Eventos
@@ -42,5 +39,5 @@ input.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') enviarMensagem();
 });
 
-// Atualiza automaticamente a cada 2 segundos
+// Atualiza a cada 2s
 setInterval(atualizarMensagens, 2000);
