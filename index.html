@@ -22,6 +22,9 @@
     <section>
         <h3>Bem-vindo</h3>
         <p>Explore o guia completo de NIGHTFALL LEGION!</p>
+        <button class="btn-download" onclick="abrirJogo()">
+    🎮 Jogar Agora
+</button>
     </section>
 
     <section id="features">
@@ -182,5 +185,18 @@ if(token){
 -->
 <!-- Script do chat -->
 <script src="script.js"></script>
+    <script>
+function abrirJogo(){
+    const start = Date.now();
+
+    window.location.href = "intent://callofdragons#Intent;scheme=callofdragons;package=com.farlightgames.samo.gp;end";
+
+    setTimeout(() => {
+        if(Date.now() - start < 2500){
+            window.location.href = "https://play.google.com/store/apps/details?id=com.farlightgames.samo.gp";
+        }
+    }, 2000);
+}
+</script>
 </body>
 </html>

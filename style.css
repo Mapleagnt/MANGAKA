@@ -649,3 +649,18 @@ footer {
     border-left: 4px solid #cd7f32;
     background: #2a1f15;
 }
+.btn-download {
+    background: linear-gradient(45deg, #00c853, #00e676);
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-download:hover {
+    transform: scale(1.1);
+}
