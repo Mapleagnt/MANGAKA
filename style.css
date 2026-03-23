@@ -666,3 +666,48 @@ footer {
     transform: scale(1.08);
     box-shadow: 0 0 15px #4da6ff, 0 0 25px #1a8cff;
 }
+/* ================= MENU BONITO ================= */
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    margin-top: 15px;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #4da6ff;
+    text-shadow: 0 0 5px #4da6ff, 0 0 10px #1a8cff;
+}
+
+/* LINHA ANIMADA */
+nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #4da6ff;
+    transition: width 0.3s;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* LINK ATIVO (página atual) */
+nav a.active {
+    color: #4da6ff;
+    text-shadow: 0 0 8px #4da6ff, 0 0 15px #1a8cff;
+}
