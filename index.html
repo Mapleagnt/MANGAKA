@@ -18,11 +18,7 @@
         <p>Domine o servidor. Torne-se um rei.</p>
 
         <div class="botoes">
-            <!-- BOTÃO JOGUE AGORA -->
             <button class="btn-ouro" onclick="abrirJogo()">Jogue Agora</button>
-            <!-- BOTÃO DISCORD -->
-            <a href="https://discord.gg/9UmsTnsNn" target="_blank" class="btn-azul">Entrar no Discord</a>
-        </div>
 
         <span class="server">Servidor xxx</span>
     </div>
@@ -33,100 +29,125 @@
 
     <!-- MENU -->
     <nav class="menu">
-        <a href="#" onclick="trocarPagina('inicio')" class="ativo">Início</a>
-        <a href="#" onclick="trocarPagina('sobre')">Sobre</a>
-        <a href="#" onclick="trocarPagina('projetos')">Projetos</a>
-        <a href="#" onclick="trocarPagina('conquistas')">Conquistas</a>
-        <a href="#" onclick="trocarPagina('admin')">Admin</a>
+        <a href="#" onclick="trocarPagina(event, 'inicio')">Início</a>
+<a href="#" onclick="trocarPagina(event, 'alianca')">Aliança</a>
+<a href="#" onclick="trocarPagina(event, 'objetivos')">Objetivos</a>
+<a href="#" onclick="trocarPagina(event, 'recrutamento')">Recrutamento</a>
+<a href="#" onclick="trocarPagina(event, 'comunicacao')">Central</a>
     </nav>
 
     <div class="conteudo">
 
         <!-- INÍCIO -->
-<div id="inicio" class="pagina ativa">
-    <h2>👑 Hierarquia da Aliança</h2>
+        <div id="inicio" class="pagina ativa">
+            <h2>👑 Hierarquia da Aliança</h2>
 
-    <div class="hierarquia">
+            <div class="hierarquia">
 
-        <!-- LINHA DE CIMA -->
-        <div class="linha-topo">
+                <div class="linha-topo">
+                    <div class="cargo">
+                        <h3>Erudito</h3>
+                        <span class="nome">Rimuru</span>
+                        <p>Responsável por manter a ordem da aliança.</p>
+                    </div>
 
-            <div class="cargo">
-                <h3>Erudito</h3>
-                <span class="nome">Nome do jogador</span>
-                <p>Responsável por manter a ordem da aliança.</p>
+                    <div class="cargo lider">
+                        <h3>Líder</h3>
+                        <span class="nome">Note</span>
+                        <p>Comanda toda a aliança e toma decisões importantes.</p>
+                    </div>
+
+                    <div class="cargo">
+                        <h3>Mestre da Guerra</h3>
+                        <span class="nome">Ike</span>
+                        <p>Responsável pelas batalhas e estratégias de ataque.</p>
+                    </div>
+                </div>
+
+                <div class="linha-baixo">
+                    <div class="cargo">
+                        <h3>Emissário</h3>
+                        <span class="nome">Morty</span>
+                        <p>Cuida da diplomacia entre alianças.</p>
+                    </div>
+
+                    <div class="cargo">
+                        <h3>Mestre das Feras</h3>
+                        <span class="nome">Deus do tempo</span>
+                        <p>Controla e lidera criaturas da aliança.</p>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="cargo lider">
-                <h3>Líder</h3>
-                <span class="nome">Nome do líder</span>
-                <p>Comanda toda a aliança e toma decisões importantes.</p>
-            </div>
-
-            <div class="cargo">
-                <h3>Mestre da Guerra</h3>
-                <span class="nome">Nome do jogador</span>
-                <p>Responsável pelas batalhas e estratégias de ataque.</p>
-            </div>
-
         </div>
 
-        <!-- LINHA DE BAIXO -->
-        <div class="linha-baixo">
+        <!-- ALIANÇA -->
+        <div id="alianca" class="pagina">
+            <h2>🔥 Aliança</h2>
 
-            <div class="cargo">
-                <h3>Emissário</h3>
-                <span class="nome">Nome do jogador</span>
-                <p>Cuida da diplomacia entre alianças.</p>
-            </div>
+            <p><strong>Sobre o projeto</strong><br>
+            Somos um grupo criado com o objetivo de reunir jogadores que querem mais do que apenas jogar — aqui buscamos evolução, organização e principalmente um ambiente respeitoso e unido.</p>
 
-            <div class="cargo">
-                <h3>Mestre das Feras</h3>
-                <span class="nome">Nome do jogador</span>
-                <p>Controla e lidera criaturas da aliança.</p>
-            </div>
+            <br>
 
+            <p><strong>Como funciona</strong><br>
+            O grupo é organizado, com membros comprometidos e dispostos a colaborar. Cada jogador tem seu papel e todos são importantes para o funcionamento da equipe.</p>
         </div>
 
-    </div>
-</div>
-
-        <!-- PERSONAGENS -->
-        <div id="sobre" class="pagina">
-            <h2>Sobre</h2>
-            <p>Descricao sobre a alianca...</p>
+        <!-- OBJETIVOS -->
+        <div id="objetivos" class="pagina">
+            <h2>🎯 Objetivos</h2>
+       <p>
+          Nosso foco é crescer como equipe, melhorar nosso desempenho dentro do jogo e construir uma comunidade forte, onde todos evoluem juntos sem perder a diversão.
+       </p>
         </div>
 
-        <!-- ARTEFATOS -->
-        <div id="projetos" class="pagina">
-            <h2>Projetos</h2>
-            <p>projetos da nossa alianca...</p>
+        <!-- RECRUTAMENTO -->
+        <div id="recrutamento" class="pagina">
+            <h2>🚀 Recrutamento</h2>
+
+            <p><strong>Atividades</strong><br>
+            • Partidas em equipe<br>
+            • Treinos (quando necessário)<br>
+            • Eventos internos<br>
+            • Possível participação em campeonatos</p>
+
+            <br>
+
+            <p><strong>Regras</strong><br>
+            • Respeito acima de tudo<br>
+            • Nada de toxicidade<br>
+            • Compromisso com o grupo<br>
+            • Trabalho em equipe sempre</p>
+
+            <br>
+
+            <p><strong>Diferencial</strong><br>
+            Aqui ninguém fica para trás. A ideia é evoluir junto, aprender com os erros e manter um ambiente leve e parceiro.</p>
+
+            <br>
+
+            <p><strong>Como entrar</strong><br>
+            Basta entrar em contato. Pode haver um teste rápido ou apenas uma conversa.</p>
+
+            <br>
+
+            <p><strong>Mensagem final</strong><br>
+            Se você procura um grupo organizado, unido e com vontade de crescer no game, esse é o lugar certo.</p>
         </div>
 
-        <!-- CONQUISTAS -->
-        <div id="conquistas" class="pagina">
-            <h2>Conquistas</h2>
-            <p>Histórico de vitórias...</p>
+        <!-- COMUNICAÇÃO -->
+        <div id="comunicacao" class="pagina">
+            <h2>💬 Comunicação</h2>
+
+            <p>Entre em contato com a aliança:</p>
+
+            <br>
+
+            <a href="https://discord.gg/9UmsTnsNn" target="_blank" class="btn-azul">Entrar no Discord</a>
+            <br><br>
+            <a href="https://chat.whatsapp.com/I9yQqHRIhrPKDgvAijzgDh?mode=gi_t" target="_blank" class="btn-azul">Entrar no WhatsApp</a>
         </div>
-
-        <!-- ADMIN
-        <div id="admin" class="pagina">
-            <h2>⚙️ Painel Admin</h2>
-
-            <!-- LOGIN 
-            <div id="loginBox">
-                <input type="text" id="user" placeholder="Usuário">
-                <input type="password" id="pass" placeholder="Senha">
-                <button onclick="login()">Entrar</button>
-            </div>
-
-            <!-- PAINEL 
-            <div id="painel" style="display:none;">
-                <h3>Editar Ranking</h3>
-                <textarea id="dadosRanking" rows="10" style="width:100%;"></textarea>
-                <button onclick="salvarRanking()">Salvar Ranking</button>
-            </div>
-        </div> -->
 
         <!-- SOCIAL BOX -->
         <div class="social-box">
@@ -142,7 +163,7 @@
                     <a href="https://youtube.com/@ozzy_nigthfall?si=sAmsmTHWwRB9f7cD" target="_blank">
                         <img src="img/youtube.png" alt="YouTube">
                     </a>
-                    <a href="https://chat.whatsapp.com/CtAw8IsUBek0J25d2HxQCO" target="_blank">
+                    <a href="https://chat.whatsapp.com/I9yQqHRIhrPKDgvAijzgDh?mode=gi_t" target="_blank">
                         <img src="img/whatsapp.png" alt="WhatsApp">
                     </a>
                 </div>

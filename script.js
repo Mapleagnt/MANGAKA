@@ -5,8 +5,11 @@ function abrirJogo() {
     window.open(linkJogo, "_blank");
 }
 
-// ===== TROCAR PÁGINA =====
-function trocarPagina(id) {
+// ===== TROCAR PÁGINA (SEM SUBIR A TELA) =====
+function trocarPagina(event, id) {
+
+    // 🚫 impede o comportamento padrão do <a> (subir pro topo)
+    event.preventDefault();
 
     // troca conteúdo
     document.querySelectorAll(".pagina").forEach(p => p.classList.remove("ativa"));
@@ -14,7 +17,7 @@ function trocarPagina(id) {
 
     // menu ativo
     document.querySelectorAll(".menu a").forEach(a => a.classList.remove("ativo"));
-    event.target.classList.add("ativo");
+    event.currentTarget.classList.add("ativo");
 
     // SOCIAL aparece só no início
     const social = document.querySelector(".social-box");
@@ -66,7 +69,7 @@ function salvarRanking() {
         aplicarDados(novo);
 
         alert("Atualizado com sucesso!");
-        location.reload(); // recarrega e fecha admin
+        location.reload();
 
     } catch (e) {
         alert("Erro! JSON inválido.");
@@ -86,7 +89,6 @@ function aplicarDados(dados) {
 // ===== INICIAR =====
 window.onload = function() {
 
-    // reset admin sempre
     document.getElementById("loginBox").style.display = "block";
     document.getElementById("painel").style.display = "none";
 
